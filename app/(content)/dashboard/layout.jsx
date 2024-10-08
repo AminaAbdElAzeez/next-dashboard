@@ -32,13 +32,13 @@ export default function DashboardLayout({ children }) {
   useEffect(() => {
     if (!isAuthenticated()) {
       router.push("/login");
-    }
-
-    const cookies = document.cookie.split("; ");
-    const nameCookie = cookies.find((row) => row.startsWith("name="));
-    if (nameCookie) {
-      const nameValue = decodeURIComponent(nameCookie.split("=")[1]);
-      setUserName(nameValue);
+    } else {
+      const cookies = document.cookie.split("; ");
+      const nameCookie = cookies.find((row) => row.startsWith("name="));
+      if (nameCookie) {
+        const nameValue = decodeURIComponent(nameCookie.split("=")[1]);
+        setUserName(nameValue);
+      }
     }
 
     const savedLanguage = localStorage.getItem("language") || "en";

@@ -202,7 +202,7 @@ body {
   text-transform: capitalize;
   margin-bottom: 7px;
   font-weight: 700;
-  color: var(--links);
+  color: var(--primary-color);
 }
 .home-right-form input {
   margin-bottom: 17px;
